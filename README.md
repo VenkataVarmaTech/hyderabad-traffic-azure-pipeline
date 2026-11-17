@@ -4,7 +4,6 @@ A **batch** data engineering pipeline, run on **synthetic** Hyderabad traffic da
 
 The architecture follows an IEEE 2025 conference paper, *"Modern Data Engineering: Integrating Databricks, Azure, and Power BI for Real-Time Analytics"*, rebuilt at a smaller scale on an Azure for Students subscription.
 
-![Reference paper](images/00_reference_paper.jpg)
 
 ## The problem
 
@@ -53,23 +52,16 @@ Generate it with `python src/generate_traffic_data.py`.
 
 **1. Ingestion with Azure Data Factory (raw to bronze)**
 
-![Pipeline run succeeded](images/15_adf_pipeline_run_succeeded.png)
 
-![Bronze Parquet output](images/16_bronze_parquet_output.png)
 
 **2. Secure storage access from Databricks (managed identity, no keys)**
 
-![Role assignment](images/19_access_connector_role.png)
 
-![External location test](images/23_external_location_test.png)
 
 **3. Bronze, silver and gold in Databricks**
 
-![Bronze read](images/24_notebook_bronze_read.png)
 
-![Silver schema](images/25_notebook_silver.png)
 
-![Gold tables](images/26_notebook_gold.png)
 
 ## Results
 
@@ -118,9 +110,7 @@ The model predicts the congestion level **one hour (four readings) ahead**. The 
 
 Medium is the hardest class because it sits between Low and High. The top features are vehicle count, average speed and hour of day.
 
-![Model accuracy](images/27_model_accuracy.png)
 
-![Feature importance and saved predictions](images/28_model_features_predictions.png)
 
 ## Power BI
 
@@ -133,15 +123,15 @@ The five gold CSV files (`hourly_pattern`, `daily_summary`, `junction_hotspots`,
 ├── README.md
 ├── src/generate_traffic_data.py          # synthetic data generator
 ├── notebooks/01_traffic_pipeline.ipynb   # Databricks: bronze -> silver -> gold -> model
-├── docs/Azure_Traffic_Analytics_Step_by_Step_Guide.docx   # full guide with screenshots
-├── images/                               # screenshots used in the guide and README
+├── docs/Azure_Traffic_Analytics_Step_by_Step_Guide.docx   # step-by-step guide (to be added)
+├── images/                               # screenshots (to be added)
 ├── requirements.txt
 └── LICENSE
 ```
 
 ## How to reproduce
 
-The complete walkthrough with every screenshot is in [`docs/Azure_Traffic_Analytics_Step_by_Step_Guide.docx`](docs/Azure_Traffic_Analytics_Step_by_Step_Guide.docx). In short:
+The step-by-step guide with screenshots is being added to the repository. In short:
 
 1. Create a resource group and an ADLS Gen2 storage account (hierarchical namespace on) with containers `raw`, `bronze`, `silver`, `gold`.
 2. Run `src/generate_traffic_data.py` and upload the CSV to `raw`.
