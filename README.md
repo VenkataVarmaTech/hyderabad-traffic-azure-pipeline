@@ -8,7 +8,7 @@ The architecture follows an IEEE 2025 conference paper, *"Modern Data Engineerin
 
 ## The problem
 
-Traffic congestion in Hyderabad, especially on the IT corridor (Hitech City, Gachibowli, Madhapur), builds up daily. Traffic data arrives from many sources in raw, messy form. A traffic team needs a pipeline that can ingest it, clean it, answer questions (which junctions, when, and how weather changes things), predict congestion before it happens, and feed a dashboard.
+Traffic congestion in Hyderabad, especially on the IT corridor (Hitech City, Gachibowli, Madhapur), builds up daily. Traffic data arrives from many sources in raw, messy form. A traffic team needs a pipeline that can ingest it, clean it, answer questions (which junctions, when, and how weather changes things), predict congestion before it happens, and produce tables ready for Power BI.
 
 ## The solution
 
